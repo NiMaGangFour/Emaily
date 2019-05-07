@@ -1,11 +1,13 @@
 const express = require('express');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+const mongoose = require('mongoose');
+
 require('./models/User.js');
 require('./services/passport.js');
 
 const keys = require('./config/keys.js');
-const mongoose = require('mongoose');
+
 const app = express();
 
 app.use(
