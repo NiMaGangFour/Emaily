@@ -8,9 +8,11 @@ const Landing = () => <h2>Landing</h2>
 
 const App = () => {
   return (
-    <div>
-    1111
-    </div>
+    <BrowserRouter>
+      <div>
+       <Route path="/" component={Landing} />
+      </div>
+    </BrowserRouter>
   );
 };
 
