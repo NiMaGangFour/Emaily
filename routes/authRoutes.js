@@ -27,7 +27,7 @@ module.exports = (app) => {
 
   app.get('/', (req, res) => {
     res.send({
-      hi: 'wendywendy 小鸡鸡❤️'
+      hi: 'wendywendy小鸡鸡❤️'
     });
   });
 
