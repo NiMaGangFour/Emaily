@@ -2,6 +2,7 @@ const express = require('express');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 require('./models/User.js');
 require('./services/passport.js');
@@ -17,9 +18,16 @@ app.use(
   })
 );
 
+app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
-require('./routes/authRoutes.js')(app);
+
+// require('./routes/authRoutes.js')(app);
+// // require('./routes/billingRoutes.js')(app);
+
+
+require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
 
 mongoose.connect(keys.mongoURI);
 
