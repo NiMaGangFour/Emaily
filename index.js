@@ -22,12 +22,8 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// require('./routes/authRoutes.js')(app);
-// // require('./routes/billingRoutes.js')(app);
-
-
-require('./routes/authRoutes')(app);
-require('./routes/billingRoutes')(app);
+require('./routes/authRoutes.js')(app);
+require('./routes/billingRoutes.js')(app);
 
 mongoose.connect(keys.mongoURI);
 
