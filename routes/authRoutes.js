@@ -27,12 +27,12 @@ module.exports = app => {
     // res.send(req.user);
   });
 
-  app.get("/", (req, res) => {
-    console.log(req.user);
-    res.send({
-      hi: "❤️wendy❤️wendy❤️❤️"
-    });
-  });
+  // app.get("/", (req, res) => {
+  //   console.log(req.user);
+  //   res.send({
+  //     hi: "❤️wendy❤️wendy❤️❤️"
+  //   });
+  // });
 
   // app.get('/auth/google/callback', (req, res) => {
   //   res.send({
