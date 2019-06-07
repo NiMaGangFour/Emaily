@@ -26,12 +26,12 @@ passport.use(
       const existingUser = await User.findOne({ googleId: profile.id });
 
       if (existingUser) {
-        console.log("existingUser", existingUser);
+        console.log("From Passport.js - existingUser", existingUser);
         return done(null, existingUser);
       }
 
       const user = await new User({ googleId: profile.id }).save();
-      console.log("From Passport.js", user);
+      console.log("From Passport.js - new User", user);
       done(null, user);
 
       // console.log('Access Token', accessToken);
