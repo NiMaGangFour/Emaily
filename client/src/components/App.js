@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
-import * as actions from '../actions';
-import Header from './Header.js';
-import Landing from './Landing.js';
+import * as actions from "../actions";
+import Header from "./Header.js";
+import Landing from "./Landing.js";
+import Dashboard from "./Dashboard";
 // const Header = () => <h2>Header</h2>
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>SurveyNew</h2>
+// const Dashboard = () => <h2>Dashboard</h2>
+const SurveyNew = () => <h2>SurveyNew</h2>;
 // const Landing = () => <h2>Landing</h2>
 
 class App extends Component {
@@ -20,15 +21,18 @@ class App extends Component {
       <div className="container">
         <BrowserRouter>
           <div>
-           <Header />
-           <Route exact path="/" component={Landing} />
-           <Route exact path="/surveys" component={Dashboard} />
-           <Route path="/surveys/new" component={SurveyNew} />
+            <Header />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/surveys" component={Dashboard} />
+            <Route path="/surveys/new" component={SurveyNew} />
           </div>
         </BrowserRouter>
       </div>
     );
   }
-};
+}
 
-export default connect(null, actions)(App);
+export default connect(
+  null,
+  actions
+)(App);
