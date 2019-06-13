@@ -7,6 +7,13 @@ const surveyTemplate = require("../services/emailTemplates/surveyTemplate.js");
 const Survey = mongoose.model("surveys");
 
 module.exports = app => {
+  app.get("/api/surveys/thanks", (req, res) => {
+    res.send("Thans for voting!");
+    // res.sendFile("../services/emailTemplates/RedirectDomainTemplate.js", {
+    //   root: __dirname
+    // });
+  });
+
   app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
     // is user logged in requireLogin
     // has enough credits requireCredits

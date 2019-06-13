@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 require("./models/User.js");
 require("./models/Survey.js");
 require("./services/passport.js");
+mongoose.set("debug", true);
 
 const keys = require("./config/keys.js");
 
@@ -40,7 +41,7 @@ if (process.env.NODE_ENV === "production") {
   //   res.sendFile(path, resolve(__dirname, "client", "build", "index.html"));
   // });
 }
-
+console.log("Environment is =====>", process.env.NODE_ENV);
 mongoose.connect(keys.mongoURI);
 
 const PORT = process.env.PORT || 5000;
