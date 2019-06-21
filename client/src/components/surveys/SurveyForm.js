@@ -4,7 +4,7 @@ import _ from "lodash";
 import { Link } from "react-router-dom";
 
 import SurveyField from "./SurveyField.js";
-
+import validateEmails from "../../utils/validateEmails.js";
 const FIELDS = [
   { label: "Survey Title", name: "title" },
   { label: "Subject Line", name: "subject" },
@@ -53,11 +53,14 @@ class SurveyForm extends Component {
 function validate(values) {
   const errors = {};
 
+  errors.emails = validateEmails(values.emails || " ");
+
   _.each(FIELDS, ({ name }) => {
     if (!values[name]) {
       errors[name] = "You must provide a value!";
     }
   });
+
   // if (!values.title) {
   //   errors.title = "You must provide a title";
   // }
