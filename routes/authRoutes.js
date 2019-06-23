@@ -8,10 +8,16 @@ module.exports = app => {
     })
   );
 
+  app.post("/api/surveys/webhooks", (req, res) => {
+    console.log(req.body);
+    res.send({});
+  });
+
   app.get(
     "/auth/google/callback",
     passport.authenticate("google"),
     (req, res) => {
+      console.log("/auth/google/callback ===> req.user", req.user);
       res.redirect("/surveys");
     }
   );

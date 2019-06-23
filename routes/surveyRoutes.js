@@ -18,6 +18,7 @@ module.exports = app => {
     // is user logged in requireLogin
     // has enough credits requireCredits
     //pass these properties from front end
+    console.log("/api/surveys ===> req.body", req.body);
     const { title, subject, body, recipients } = req.body;
 
     const survey = new Survey({
