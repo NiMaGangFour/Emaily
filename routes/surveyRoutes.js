@@ -1,3 +1,6 @@
+const _ = require("lodash");
+const { Path } = require("path-parser");
+const { URL } = require("url");
 const mongoose = require("mongoose");
 const requireLogin = require("../middlewares/requireLogin.js");
 const requireCredits = require("../middlewares/requireCredits");
@@ -12,6 +15,16 @@ module.exports = app => {
     // res.sendFile("../services/emailTemplates/RedirectDomainTemplate.js", {
     //   root: __dirname
     // });
+  });
+
+  app.post("/api/surveys/webhooks", (req, res) => {
+    const events = _.map(req.body, event => {
+      const pathname = new URL(event.url).pathname;
+      const p = new Path("/api/surveys/:surveyId/:choice"); //p is a Mather
+      console.log("pathname ===>", pathname);
+      // console.log("p ===>", p);
+      console.log("p.test(pathname) ===>", p.test(pathname)); //use P as a Mather to extra surveyId and choice from pathname
+    });
   });
 
   app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
