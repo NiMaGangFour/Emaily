@@ -18,22 +18,24 @@ module.exports = app => {
   });
 
   app.post("/api/surveys/webhooks", (req, res) => {
-    const events = _.map(req.body, ({ email, url }) => {
-      const pathname = new URL(url).pathname;
-      const p = new Path("/api/surveys/:surveyId/:choice"); //p is a Mather
-      console.log("pathname ===>", pathname);
-      // console.log("p ===>", p);
-      console.log("p.test(pathname) ===>", p.test(pathname)); //use P as a Mather to extra surveyId and choice from pathname
-      const match = p.test(pathname);
-      if (match)
-        return {
-          email: email,
-          surveyId: match.surveyId,
-          choice: match.choice
-        };
-    });
+    const p = new Path("/api/surveys/:surveyId/:choice"); //p is a Matcher
+    const events = _.chain(req.body)
+      .map(({ email, url }) => {
+        const match = p.test(new URL(url).pathname); //use P as a Mather to extra surveyId and choice from pathname
+        if (match)
+          return {
+            email: email,
+            surveyId: match.surveyId,
+            choice: match.choice
+          };
+      })
+      .compact() //remove all element(s) which is undefined
+      .uniqBy("email", "surveyId") // get only one unique element by unique email and unique surveyId
+      .value();
+
     console.log(events);
-    const compactEvents = _.compact(events); //remove all element(s) which is undefined
+
+    res.send({}); //tell sendfrid everything is go ok
   });
 
   app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
