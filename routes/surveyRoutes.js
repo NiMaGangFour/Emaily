@@ -18,13 +18,22 @@ module.exports = app => {
   });
 
   app.post("/api/surveys/webhooks", (req, res) => {
-    const events = _.map(req.body, event => {
-      const pathname = new URL(event.url).pathname;
+    const events = _.map(req.body, ({ email, url }) => {
+      const pathname = new URL(url).pathname;
       const p = new Path("/api/surveys/:surveyId/:choice"); //p is a Mather
       console.log("pathname ===>", pathname);
       // console.log("p ===>", p);
       console.log("p.test(pathname) ===>", p.test(pathname)); //use P as a Mather to extra surveyId and choice from pathname
+      const match = p.test(pathname);
+      if (match)
+        return {
+          email: email,
+          surveyId: match.surveyId,
+          choice: match.choice
+        };
     });
+    console.log(events);
+    const compactEvents = _.compact(events); //remove all element(s) which is undefined
   });
 
   app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
