@@ -34,6 +34,7 @@ module.exports = app => {
       .value();
 
     console.log(events);
+    console.log(req.body);
 
     res.send({}); //tell sendfrid everything is go ok
   });
