@@ -31,10 +31,23 @@ module.exports = app => {
       })
       .compact() //remove all element(s) which is undefined
       .uniqBy("email", "surveyId") // get only one unique element by unique email and unique surveyId
+      .each(({ surveyId, email, choice }) => {
+        Survey.updateOne(
+          {
+            _id: surveyId,
+            recipients: {
+              $elemMatch: { email: email, responded: false }
+            }
+          },
+          {
+            $inc: { [choice]: 1 },
+            $set: { "recipients.$.responded": true }
+          }
+        ).exec();
+      })
       .value();
 
     console.log(events);
-    console.log(req.body);
 
     res.send({}); //tell sendfrid everything is go ok
   });
