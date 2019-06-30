@@ -25,6 +25,8 @@ module.exports = app => {
     // });
   });
 
+  //Development Env set up on Sendgrid (HTTP POST URL) ===> https://mydomainjdfsjkfbfnsbfsjfhd.serveo.net/api/surveys/webhooks
+  //Production Env set up on Sendgrid (HTTP POST URL) ===> https://murmuring-thicket-17057.herokuapp.com/api/surveys/webhooks
   app.post("/api/surveys/webhooks", (req, res) => {
     const p = new Path("/api/surveys/:surveyId/:choice"); //p is a Matcher
     const events = _.chain(req.body)
