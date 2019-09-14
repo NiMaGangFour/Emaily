@@ -14,13 +14,13 @@ class Header extends Component {
       case false:
         return [
           <li>
-            <a href="/auth/google">
-              <h5>Login With Google</h5>
+            <a href="#">
+              <h5>Functions</h5>
             </a>
           </li>,
           <li>
-            <a href="/auth/google">
-              <h5>Login With Google</h5>
+            <a href="# plan">
+              <h5>Plans</h5>
             </a>
           </li>,
           <li>
@@ -63,13 +63,13 @@ class Header extends Component {
         </div>
 
         <div className="header-text-box">
-          <h2>
+          <h3>
             I'm Siyu,Passionate Front-End Developerand Javascript Developer
-          </h2>
-          <h4>
+          </h3>
+          <h5 class="header-h5">
             My background is in programming. I currently work as a Web Developer
             at the NOVA SOFTWARE Pty. Ltd in Canberra.
-          </h4>
+          </h5>
           <a className="btn btn-full" href="#about-me">
             More Info
           </a>
