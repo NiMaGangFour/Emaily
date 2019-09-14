@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
+import "./css/Components.css";
 
 const Landing = () => {
-  return(
-    <div style={{ textAlign: 'center' }}>
+  return (
+    <div className="row">
       <h1>Emaily</h1>
       Collect feedback from your users
     </div>

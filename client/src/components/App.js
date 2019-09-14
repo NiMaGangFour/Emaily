@@ -7,6 +7,7 @@ import Header from "./Header.js";
 import Landing from "./Landing.js";
 import Dashboard from "./Dashboard";
 import SurveyNew from "./surveys/SurveyNew.js";
+import "./css/Components.css";
 // const Header = () => <h2>Header</h2>
 // const Dashboard = () => <h2>Dashboard</h2>
 // const SurveyNew = () => <h2>SurveyNew</h2>;
@@ -19,7 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <BrowserRouter>
           <div>
             <Header />
