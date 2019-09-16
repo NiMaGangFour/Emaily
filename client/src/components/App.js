@@ -3,7 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
 import * as actions from "../actions";
-import Header from "./Header.js";
+import Home from "./Home";
 import Landing from "./Landing.js";
 import Dashboard from "./Dashboard";
 import SurveyNew from "./surveys/SurveyNew.js";
@@ -23,8 +23,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Header />
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
           </div>

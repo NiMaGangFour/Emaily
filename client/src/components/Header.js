@@ -1,28 +1,16 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 import Payments from "./Payments";
 import "./css/Components.css";
-import Logo_White from "./css/image/Logo_White_Emaily.png"; // with import
-
 class Header extends Component {
-  renderContent() {
+  renderHeader() {
+    console.log(this.props.auth);
     switch (this.props.auth) {
       case null:
         return;
       case false:
         return [
-          <li>
-            <a href="#">
-              <h5>Functions</h5>
-            </a>
-          </li>,
-          <li>
-            <a href="# plan">
-              <h5>Plans</h5>
-            </a>
-          </li>,
           <li>
             <a href="/auth/google">
               <h5>Login With Google</h5>
@@ -43,47 +31,19 @@ class Header extends Component {
         ];
     }
   }
-
   render() {
-    console.log(this.props.auth);
     return (
-      <div className="header">
-        <div className="row">
-          <Link
-            to={this.props.auth ? "/surveys" : "/"}
-            className="left brand-logo"
-          >
-            <img
-              className="logo_white"
-              src={Logo_White}
-              alt="Emaily Logo White"
-            ></img>
-          </Link>
-          <ul className="navigations">{this.renderContent()}</ul>
-        </div>
-
-        <div className="header-text-box">
-          <h3>
-            I'm Siyu,Passionate Front-End Developerand Javascript Developer
-          </h3>
-          <h5 class="header-h5">
-            My background is in programming. I currently work as a Web Developer
-            at the NOVA SOFTWARE Pty. Ltd in Canberra.
-          </h5>
-          <a className="btn btn-full" href="#about-me">
-            More Info
-          </a>
-          <a className="btn btn-ghost" href="#contact-me">
-            Contact Us
-          </a>
-        </div>
+      <div>
+        <nav>
+          {" "}
+          <ul className="right">{this.renderHeader()}</ul>
+        </nav>
       </div>
     );
   }
 }
-
-function mapStateToProps({ auth }) {
+const mapStateToProps = ({ auth }) => {
   return { auth };
-}
+};
 
 export default connect(mapStateToProps)(Header);
