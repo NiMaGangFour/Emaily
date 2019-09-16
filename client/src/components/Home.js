@@ -20,9 +20,6 @@ class Home extends Component {
             <HashLink smooth to="#functions">
               <h5>Functions</h5>
             </HashLink>
-            {/* <Link onClick={this.handleScroll.bind("1")}>
-              <h5>Functions</h5>
-            </Link> */}
           </li>,
           <li>
             <HashLink smooth to="#plan">
@@ -70,26 +67,34 @@ class Home extends Component {
 
           <div className="header-text-box">
             <h3>
-              I'm Siyu,Passionate Front-End Developerand Javascript Developer
+              Emaily <br />
+              Free Fast and Accurate!
+              <br />
+              New Way for Survey
             </h3>
             <h5 className="header-h5">
-              My background is in programming. I currently work as a Web
-              Developer at the NOVA SOFTWARE Pty. Ltd in Canberra.
+              Easy to use with concise UI
+              <br />
+              Customize You unique Survey Question
             </h5>
-            <a className="btn btn-full" href="#about-me">
-              More Info
-            </a>
-            <a className="btn btn-ghost" href="#contact-me">
-              Contact Us
-            </a>
+
+            <HashLink smooth to="#functions">
+              <a className="btn btn-full" href="#n">
+                More Info
+              </a>
+            </HashLink>
+
+            <HashLink smooth to="#plan">
+              <a className="btn btn-ghost" href="#n">
+                Choose My Plans
+              </a>
+            </HashLink>
           </div>
         </div>
         <div>
           <div className="row" id="functions">
             <h2>Emaily can do what u want!</h2>
-            <p className="landing-long-copy">
-              Passion and Mission in Web &mdash; Front-end Developer
-            </p>
+            <p className="landing-long-copy">Free for U &mdash; All the Time</p>
           </div>
 
           <div className="row">
@@ -97,48 +102,40 @@ class Home extends Component {
               <Icon className="icon-medium" style={{ fontSize: 80 }}>
                 timeline
               </Icon>
-              <h4 className="landing-h3">I'm Passionate About Coding!</h4>
+              <h4 className="landing-h3">4 Steps to finish your Survey</h4>
               <p>
-                I am passionate about writing code. In my spare time, I often
-                learn about web development on the web course of udemy and share
-                my experience with my peers on Stack Overflow. I am also a
-                registered member of ACS.
+                EZ way to start your Survey Setting, just go straight to create
+                the core of your Survey.
               </p>
             </div>
             <div className="col s3">
               <Icon className="icon-medium" style={{ fontSize: 80 }}>
                 account_balance_wallet
               </Icon>
-              <h4 className="landing-h3">I'm Passionate About Coding!</h4>
+              <h4 className="landing-h3">Low monthly pay for Premium Plan</h4>
               <p>
-                I am passionate about writing code. In my spare time, I often
-                learn about web development on the web course of udemy and share
-                my experience with my peers on Stack Overflow. I am also a
-                registered member of ACS.
+                Free forever for Basic Plan user. Lowest market price, pay less
+                money and get great Premium Functions
               </p>
             </div>
             <div className="col s3">
               <Icon className="icon-medium" style={{ fontSize: 80 }}>
                 bookmarks
               </Icon>
-              <h4 className="landing-h3">I'm Passionate About Coding!</h4>
+              <h4 className="landing-h3">Concise layout with friendly UI</h4>
               <p>
-                I am passionate about writing code. In my spare time, I often
-                learn about web development on the web course of udemy and share
-                my experience with my peers on Stack Overflow. I am also a
-                registered member of ACS.
+                No complex logic, No Cumbersome feature set. You can master it
+                in only 1 minute.
               </p>
             </div>
             <div className="col s3">
               <Icon className="icon-medium" style={{ fontSize: 80 }}>
                 translate
               </Icon>
-              <h4 className="landing-h3">I'm Passionate About Coding!</h4>
+              <h4 className="landing-h3">Mutiple Language Sup</h4>
               <p>
-                I am passionate about writing code. In my spare time, I often
-                learn about web development on the web course of udemy and share
-                my experience with my peers on Stack Overflow. I am also a
-                registered member of ACS.
+                Use the unique language, and target your special client group
+                accurately.
               </p>
             </div>
           </div>
@@ -147,7 +144,7 @@ class Home extends Component {
             <div className="row ">
               <h2 className="plan-h2">Plans</h2>
               <p className="landing-long-copy">
-                Passion and Mission in Web &mdash; Front-end Developer
+                Free for U &mdash; All the Time
               </p>
             </div>
 
@@ -161,28 +158,28 @@ class Home extends Component {
                     <h3>Free Trial </h3>
                     <p className="position">
                       0.00 AUD/
-                      <span>Ulimited</span>
+                      <span>unlimited</span>
                     </p>
                   </div>
                   <div>
                     <ul>
                       <li>
                         <Icon className="icon-small" style={{ fontSize: 16 }}>
-                          location_searching
+                          check_circle
                         </Icon>
-                        First 30 Surveys for Free!
+                        Free for U Forever
                       </li>
                       <li>
                         <Icon className="icon-small" style={{ fontSize: 16 }}>
-                          location_searching
+                          check_circle
                         </Icon>
-                        Bachelor degree of IT
+                        Unlimited Survey Projects
                       </li>
                     </ul>
                   </div>
                   <div>
                     <a className="btn btn-full" href="#about-me">
-                      Purchase Now
+                      You are here!
                     </a>
                   </div>
                 </div>
@@ -195,25 +192,29 @@ class Home extends Component {
                     </Icon>
                     <h3>premium </h3>
                     <p class="position">
-                      7.20AUD/
+                      1.20AUD/
                       <span>Month</span>
                     </p>
                   </div>
                   <div>
                     <ul>
                       <li>
-                        <i class="icon ion-md-bookmarks icon-margin"></i>Master
-                        degree of IT{" "}
+                        <Icon className="icon-small" style={{ fontSize: 16 }}>
+                          check_circle
+                        </Icon>
+                        Excel and .csv File Importable
                       </li>
                       <li>
-                        <i class="icon ion-md-bookmarks icon-margin"></i>
-                        Bachelor degree of IT
+                        <Icon className="icon-small" style={{ fontSize: 16 }}>
+                          check_circle
+                        </Icon>
+                        Survey Result Exportable
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <a className="btn btn-full" href="#about-me">
-                      Purchase Now
+                    <a className="btn btn-ghost" href="#about-me">
+                      Upgrade Now
                     </a>
                   </div>
                 </div>
@@ -226,31 +227,82 @@ class Home extends Component {
                     </Icon>
                     <h3>premium Plus+ </h3>
                     <p class="position">
-                      9.00/
+                      5.00 AUD/
                       <span>Month</span>
                     </p>
                   </div>
                   <div>
                     <ul>
                       <li>
-                        <i class="icon ion-md-bookmarks icon-margin"></i>Master
-                        degree of IT{" "}
+                        <Icon className="icon-small" style={{ fontSize: 16 }}>
+                          check_circle
+                        </Icon>
+                        Make Your Analysis Diagram
                       </li>
                       <li>
-                        <i class="icon ion-md-bookmarks icon-margin"></i>
-                        Bachelor degree of IT
+                        <Icon className="icon-small" style={{ fontSize: 16 }}>
+                          check_circle
+                        </Icon>
+                        Analysis Diagram Exportable
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <a className="btn btn-full" href="#about-me">
-                      Purchase Now
+                    <a className="btn btn-ghost" href="#about-me">
+                      Upgrade Now
                     </a>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+
+          <footer>
+            <div class="row">
+              <div class="col s6">
+                <ul class="footer-nav">
+                  <li>
+                    <HashLink smooth to="#functions">
+                      Function
+                    </HashLink>
+                  </li>
+                  <li>
+                    <HashLink smooth to="#plan">
+                      Plan
+                    </HashLink>
+                  </li>
+                </ul>
+              </div>
+              <div class="col s6">
+                <ul class="social-links">
+                  {/* <li>
+                    <a href="https://github.com/NiMaGangFour" target="_blank">
+                      <i class="icon ion-logo-github"></i>
+                    </a>
+                  </li> */}
+                  <li>
+                    <a href="#n">
+                      <Icon className="icon-small" style={{ fontSize: 16 }}>
+                        ring_volume
+                      </Icon>
+                      0416 542 666
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#n">
+                      <Icon className="icon-small" style={{ fontSize: 16 }}>
+                        mail
+                      </Icon>
+                      NiMaGangThree@gmail.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <p>Copyright &copy; 2019 by Siyu. All rights reserved.</p>
+            </div>
+          </footer>
         </div>
       </div>
     );
