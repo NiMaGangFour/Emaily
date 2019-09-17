@@ -23,7 +23,7 @@ class SurveyNew extends Component {
 
     return (
       <div>
-        <SurveyHeader subTitle="Please Create Your Survey " />
+        <SurveyHeader subTitle="Please Create Your Survey 在这种" />
         <SurveyForm
           onSurveySubmit={() => this.setState({ showFormReview: true })}
         />{" "}
