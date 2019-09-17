@@ -1,6 +1,6 @@
 export default [
-  { label: "Survey Title", name: "title" },
-  { label: "Subject Line", name: "subject" },
-  { label: "Email Body", name: "body" },
-  { label: "Recipients List", name: "recipients" }
+  { label: "New Survey Name", name: "title", icon: "create_new_folder" },
+  { label: "Subject of Survey Email", name: "subject", icon: "flag" },
+  { label: "Question of Survey Email", name: "body", icon: "live_help" },
+  { label: "Recipients Email List", name: "recipients", icon: "email" }
 ];

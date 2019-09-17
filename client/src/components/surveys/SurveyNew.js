@@ -4,6 +4,7 @@ import { reduxForm } from "redux-form";
 
 import SurveyForm from "./SurveyForm.js";
 import SurveyFormReview from "./SurveyFormReview.js";
+import SurveyHeader from "./SurveyHeader.js";
 
 class SurveyNew extends Component {
   state = { showFormReview: false };
@@ -11,16 +12,22 @@ class SurveyNew extends Component {
     console.log(this.state.showFormReview);
     if (this.state.showFormReview) {
       return (
-        <SurveyFormReview
-          onCancel={() => this.setState({ showFormReview: false })}
-        />
+        <div>
+          <SurveyHeader subTitle="Please Confirm Your Survey " />
+          <SurveyFormReview
+            onCancel={() => this.setState({ showFormReview: false })}
+          />
+        </div>
       );
     }
 
     return (
-      <SurveyForm
-        onSurveySubmit={() => this.setState({ showFormReview: true })}
-      />
+      <div>
+        <SurveyHeader subTitle="Please Create Your Survey " />
+        <SurveyForm
+          onSurveySubmit={() => this.setState({ showFormReview: true })}
+        />{" "}
+      </div>
     );
   }
 
